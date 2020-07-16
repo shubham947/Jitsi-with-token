@@ -137,9 +137,9 @@ asap_accepted_audiences = { "jitsi", "smash" }
 
 ```
 VirtualHost "jitmeet.example.com"
-    authentication = "token";
-    app_id = "example_app_id";             -- application identifier
-    app_secret = "example_app_secret";     -- application secret known only to your token
+    authentication="token"
+    app_id="example_app_id"             -- application identifier
+    app_secret="example_app_secret"     -- application secret known only to your token
 ```
 
 ### To access the data in lib-jitsi-meet you have to enable the prosody module mod_presence_identity in your config.
@@ -159,11 +159,11 @@ Component "conference.jitmeet.example.com" "muc"
 ### Setup guest domain
 ```
 VirtualHost "guest.jitmeet.example.com"
-    authentication = "token";
-    app_id = "example_app_id";
-    app_secret = "example_app_secret";
-    c2s_require_encryption = true;
-    allow_empty_token = true;
+    authentication="token"
+    app_id="example_app_id"
+    app_secret="example_app_secret"
+    c2s_require_encryption=true
+    allow_empty_token=true
 ```
 
 ### Enable guest domain in config.js
