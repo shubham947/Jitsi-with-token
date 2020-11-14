@@ -53,12 +53,13 @@ sudo su
 After reboot, run the folow script
 ```bash
 cd &&
+apt-get install openjdk-8-jdk
 cp /etc/prosody/certs/localhost.key /etc/ssl &&
 apt-get install nginx -y &&
 wget -qO - https://download.jitsi.org/jitsi-key.gpg.key | sudo apt-key add - &&
 sh -c "echo 'deb https://download.jitsi.org stable/' > /etc/apt/sources.list.d/jitsi-stable.list" &&
 apt-get -y update &&
-apt-get install jitsi-meet -y &&
+apt-get install --no-install-recommends jitsi-meet -y &&
 apt-get install jitsi-meet-tokens -y
 ```
 
@@ -192,6 +193,10 @@ org.jitsi.jicofo.auth.DISABLE_AUTOLOGIN=true
 SET the follow configs
 ```
 JICOFO_HOST=jitmeet.example.com
+```
+OR
+```
+JICOFO_HOST=localhost
 ```
 
 ### And edit videobridge config in `/etc/jitsi/videobridge/config`
